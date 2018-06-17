@@ -2,7 +2,7 @@ syntax = "proto3";
 package polling;
 option go_package = "pb";
 
-service {
+service PollingService {
   rpc Poll (PollRequest) returns (PollResponse);
   rpc Register (RegisterRequest) returns (RegisterResponse);
 }
