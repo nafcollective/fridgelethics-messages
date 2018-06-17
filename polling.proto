@@ -1,0 +1,25 @@
+syntax = "proto3";
+package polling;
+option go_package = "pb";
+
+service {
+  rpc Poll (PollRequest) returns (PollResponse);
+  rpc Register (RegisterRequest) returns (RegisterResponse);
+}
+
+message PollRequest {
+  bytes address = 1;
+}
+
+message PollResponse {
+  uint64 distance = 1;
+  uint64 claimableTokens = 2;
+}
+
+message RegisterRequest {
+  bytes address = 1;
+}
+
+message RegisterResponse {
+  string url = 1;
+}
